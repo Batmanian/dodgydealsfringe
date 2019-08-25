@@ -12,6 +12,7 @@ const plumber = require("gulp-plumber");
 const rename = require("gulp-rename");
 const sass = require("gulp-sass");
 const uglify = require("gulp-uglify");
+const pug = require('gulp-pug');
 
 // Load package.json for banner
 const pkg = require('./package.json');
@@ -75,6 +76,13 @@ function modules() {
   return merge(bootstrap, fontAwesomeCSS, fontAwesomeWebfonts, jquery, jqueryEasing, simpleLineIconsFonts, simpleLineIconsCSS);
 }
 
+// run this task by typing in gulp pug in CLI
+gulp.task('pug', function() {  
+  return gulp.src('pug/*.pug')
+      .pipe(pug()) // pipe to pug plugin
+      .pipe(gulp.dest('./')) // tell gulp our output folder
+});
+
 // CSS task
 function css() {
   return gulp
@@ -128,7 +136,7 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
+const build = gulp.series(vendor, gulp.parallel(css, js ));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
