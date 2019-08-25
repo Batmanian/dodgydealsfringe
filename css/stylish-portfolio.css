@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro';
+  font-family: 'Open Sans', sans-serif;
 }
 
 .btn-xl {
@@ -38,7 +38,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: 'Abril Fatface', cursive;
 }
 
 .text-faded {
@@ -104,6 +104,7 @@ h6 {
   font-size: 4rem;
   margin: 0;
   padding: 0;
+  font-size: 5.5rem;
 }
 
 @media (min-width: 992px) {
@@ -113,6 +114,49 @@ h6 {
   .masthead h1 {
     font-size: 5.5rem;
   }
+}
+
+.masthead .h2 {
+  font-size: 3rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1rem;
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+  }
+  .masthead .h2 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+.masthead hr {
+  overflow: visible;
+  /* For IE */
+  height: 30px;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+}
+
+.masthead hr:before {
+  /* Not really supposed to work, but does */
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 1px 0;
+  border-radius: 20px;
+}
+
+.masthead .display-4 {
+  font-size: 3rem;
 }
 
 /* Side Menu */

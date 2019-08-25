@@ -9,5 +9,8 @@
 
 // Font Mixins
 @mixin body-font {
-  font-family: 'Source Sans Pro';
+  font-family: 'Open Sans', sans-serif;
+}
+@mixin headings-font {
+  font-family: 'Abril Fatface', cursive;
 }
